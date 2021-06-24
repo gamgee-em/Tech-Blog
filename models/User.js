@@ -40,6 +40,8 @@ User.init(
                 is: /^(?=.{10,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/g,
             },
         },
+    },
+        {
             hooks: {
               beforeCreate: async (newUserData) => {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);

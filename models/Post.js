@@ -1,4 +1,4 @@
-const { Models, DataTypes, Sequelize } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection.js');
 
@@ -13,11 +13,11 @@ Post.init(
             autoIncrement: true,
         },
         post_title: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         post_content: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         user_id: {
@@ -27,6 +27,8 @@ Post.init(
                 key: 'id',
             },
         },
+    },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
@@ -35,4 +37,4 @@ Post.init(
     }   
 );
 
-module.exports = User;
+module.exports = Post;
