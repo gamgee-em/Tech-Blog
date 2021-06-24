@@ -12,13 +12,20 @@ Post.init(
             allowNull: false,
             autoIncrement: true,
         },
-        title: {
+        post_title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        content: {
+        post_content: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
         },
         sequelize,
         timestamps: false,
