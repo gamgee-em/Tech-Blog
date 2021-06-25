@@ -14,7 +14,8 @@ router.get('/register', (req, res) =>
 router.get('/blogs', (req, res) =>
     res.render('blogs', {
         title: `Blogs | ${ title }`,
-        name: 'Sam',
+        //! try to get correct value here
+        name: req.body.username,
     }));
 
 router.get('*', (req, res) =>
