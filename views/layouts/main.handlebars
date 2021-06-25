@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{{ title }}} </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
@@ -15,8 +16,8 @@
   <nav class="d-flex navbar navbar-dark bg-dark justify-content-end">
     <p class='position-absolute'>All Things Tech</p>
     <a class="nav px-2 text-info" href="/"> Home</a>
-    <a class="nav px-2 text-info" href="/blogs"> Blog</a>
     {{#if logged_in}}
+    <a class="nav px-2 text-info" href="/blogs">Blog</a>
     <a class="nav text-info pl-2" id="logout" href='/logout'>Logout</a>
     {{else}}
     <a class="nav text-info pl-2" href="/login">Login</a>

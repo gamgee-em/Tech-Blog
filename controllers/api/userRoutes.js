@@ -1,12 +1,14 @@
 const router = require('express').Router();
-//const { Post, User } = require('../models');
+const User  = require('../../models/User');
 
-router.post('/', async (req, res) => {
-    const userData = await User.create(req.body);
-
-    req.session.save(() => {
-        req.session.user_id = userData.id;
-    });
+router.post('/register', async (req, res) => {
+    try {
+       console.log(req.body)
+    } catch {
+        res.status(404).render('/404');
+    }
+  
+    
 });
 
 module.exports = router;

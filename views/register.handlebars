@@ -1,44 +1,58 @@
 <div class="d-flex justify-content-center mt-4">
   <div class="card shadow mt-4 w-25">
+
     <div class="card-header">
       <h3>Register</h3>
-      
     </div>
+
     <div class="card-body">
-      <form>
+      <form action='/register' method='POST' id='register-form'>
+
         <div class="input-group form-group">
-          <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">
+          <label for="f_name"></label>
+          <input type="text" class="form-control" name="f_name" id="f_name" placeholder="First Name">
         </div>
+
         <div class="input-group form-group">
-          <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">
+          <label for="l_name"></label>
+          <input type="text" class="form-control" name="l_name" id="l_name" placeholder="Last Name">
         </div>
+
         <div class="input-group form-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
           </div>
-          <input type="text" class="form-control" placeholder="Email">
+          <label for="email"></label>
+          <input type="text" class="form-control" name='email' id='email' placeholder="Email">
         </div>
+
         <div class="input-group form-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-user"></i></span>
           </div>
-          <input type="text" class="form-control" placeholder="Username">
-          
+          <label for="username"></label>
+          <input type="text" class="form-control" name='username' id='username' placeholder="Username">
         </div>
+
         <div class="input-group form-group">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fas fa-key"></i></span>
           </div>
-          <input type="password" class="form-control" placeholder="Password">
+          <label for='password'></label>
+          <input type="password" class="form-control" id='password' name='password' placeholder="Password">
         </div>
+
         <div class="row align-items-center remember pl-3">
           <input type="checkbox"> <span class="pl-2">Remember Me</span>
         </div>
+
         <div class="form-group pl-1 pt-1">
-            <input type="submit" value="Login" class="btn float-left btn-info">
+            <input type="submit" value="Register" id='register-btn' class="btn float-left btn-info">
         </div>
+        
       </form>
     </div>
+
     <div class="card-footer">
       <div class="d-flex justify-content-center social_icon">
         <a href='google' target='_blank' class="text-info"><i class="fab fa-google"></i></a>
@@ -46,5 +60,8 @@
         <a href='twitter' target='_blank' class="text-info"><i class="fab fa-facebook-f"></i></a>
       </div>
     </div>
+
   </div>
 </div>
+
+<script src='js/register.js'></script>

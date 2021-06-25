@@ -17,11 +17,15 @@ User.init(
             allowNull: false,
             autoIncrement: true,
         },
-        name: {
+        f_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        user_name: {
+        l_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
         },
