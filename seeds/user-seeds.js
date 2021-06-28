@@ -13,7 +13,7 @@ const userData = [
         f_name: "Thao",
         l_name: 'Scap',
         email: "thao@email.com",
-        user_name: "Babalonica",
+        username: "Babalonica",
         password: "Password!2345"
     },
     {

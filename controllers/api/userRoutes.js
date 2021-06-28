@@ -9,15 +9,19 @@ router.post('/register', async (req, res) => {
         res.status(200).json(newUser);
         //console.log('req body:',req.body);
 
-        /* req.session.save(() => {
+        req.session.save(() => {
             req.session.user_id = newUser.id;
             req.session.logged_in = true;
             res.status(200).json(newUser);
-        }); */
+        });
     } catch (err) {
         console.log("Error in post route for register", err)
         res.status(404).json(err);
     };
+});
+
+router.post('/login', (req, res) => {
+    
 });
 
 module.exports = router;

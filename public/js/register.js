@@ -9,6 +9,7 @@ const registerHandler = async (event) => {
     const username = $('#username').val().trim();
     const password = $('#password').val().trim();
     let res;
+
     console.log('Input Values:',f_name, l_name, email, username, password)
 
     if (f_name && l_name && email && username && password) {
@@ -16,15 +17,15 @@ const registerHandler = async (event) => {
             method: 'POST',
             body: JSON.stringify({ f_name, l_name, email, username, password }),
             headers: {'Content-Type': 'application/json' },
-        })
-     }
+        });
+     };
      console.log('res:', res);
          if (res.ok) {
-             //! redirect to login later if time
-            document.location.replace('/blogs');
+            //! redirect to login later if time
+            document.location.replace('/login');
         } else {
             alert('Please fill out all required fields');
-        }
+        };
         
 };
 
