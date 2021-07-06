@@ -1,20 +1,20 @@
 const router = require('express').Router();
 const User  = require('../../models/User');
+const withAuth = require('../../utils/withAuth');
 
 router.post('/', (req, res) => {
     console.log('/',req.body);
-    /* try {
+    try {
         const userData = User.create( req.body );
 
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username;
-            //req.session.password = userData.password;
             req.session.logged_in = true;
         });
     }  catch (err) {
         res.status(404).json(err);
-    }*/
+    }
 });
 
 router.post('/register', async (req, res) => {
@@ -23,12 +23,12 @@ router.post('/register', async (req, res) => {
     try {
         const userData = await User.create(req.body);
 
-        /* req.session.save(() => {
+        req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.username = userData.username
             req.session.logged_in = true;
-            res.status(200).json(userData);
-        }); */
+        });
+
         res.status(200).json(userData);
     } catch (err) {
         console.log("Error in post route for register", err)
@@ -43,18 +43,16 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id,
             req.session.username = userData.username
-            //req.session.logged_in = true,
-
-            res.status(200).json(userData);
-            //res.render('/blogs');
         });
+        res.status(200).json(userData);
+
     } catch (err) {
         console.error('Error in post route for login', err);
         res.status(404).json(err);
     };
 });
 
-router.post('/blogs', (req, res) => {
+router.post('/blogs', withAuth, (req, res) => {
     res.status(200).render('/blogs');
 });
 

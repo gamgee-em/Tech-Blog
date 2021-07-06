@@ -16,7 +16,7 @@ const loginHandler = async (event) => {
    };
    console.log(res.ok);
    if (res.ok) {
-       document.location.replace('api/users/blogs');
+       document.location.replace('/blogs');
    } else {
        alert(res.statusText);
    }

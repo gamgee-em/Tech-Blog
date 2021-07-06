@@ -2,6 +2,7 @@ const router = require('express').Router();
 const  User = require('../models/User')
 const title = `All Things Tech`;
 const withAuth = require('../utils/withAuth');
+
 router.get('/', (req, res) =>
     res.render('home', { title: `Welcome | ${ title }`, /* logged_in: false  */}));
 
