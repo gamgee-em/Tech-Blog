@@ -16,12 +16,12 @@
   <nav class="d-flex navbar navbar-dark bg-dark justify-content-end">
     <p class='position-absolute'>All Things Tech</p>
     <a class="nav px-2 text-info" href="/"> Home</a>
-    {{#if logged_in}}
+    {{!-- {{#if logged_in}} --}}
     <a class="nav px-2 text-info" href="/blogs">Blog</a>
-    <a class="nav text-info pl-2" id="logout" href='/logout'>Logout</a>
-    {{else}}
-    <a class="nav text-info pl-2" href="/login">Login</a>
-    {{/if}}
+    <a class="nav text-info pl-2" id="logout" href='/'>Logout</a>
+    {{!-- {{else}} --}}
+    <a class="nav text-info pl-2" id='login' href="/login">Login</a>
+    {{!-- {{/if}} --}}
   </nav>
 
     {{{ body }}}
@@ -31,7 +31,6 @@
   </footer>
 
 {{!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../public/app.js"></script>
  --}}
   </body>
 </html>

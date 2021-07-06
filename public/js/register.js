@@ -21,7 +21,6 @@ const registerHandler = async (event) => {
      };
      console.log('res:', res);
          if (res.ok) {
-            //! redirect to login later if time
             document.location.replace('/login');
         } else {
             alert('Please fill out all required fields');

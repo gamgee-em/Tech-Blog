@@ -1,21 +1,22 @@
-const email = $('#email').val().trim();
-const password = $('#password').val().trim();
 const loginForm = $('#login-form');
-let res;
 
 const loginHandler = async (event) => {
     event.preventDefault();
 
-   if (email && password) {
+    const username = $('#username').val().trim();
+    const password = $('#password').val().trim();
+    let res;
+    
+   if (username && password) {
         res = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password}),
+        body: JSON.stringify({ username, password}),
         headers: {'Content-type': 'application/json' },
     });
    };
-   console.log('res:', res);
+   console.log(res.ok);
    if (res.ok) {
-       document.location.replace('/blogs');
+       document.location.replace('api/users/blogs');
    } else {
        alert(res.statusText);
    }
